@@ -73,7 +73,7 @@ Every image slot uses a semantic key, such as `home.hero` or `simulation.fair-ex
 3. Save it to `public/images/...` at the manifest's `assetPath`.
 4. Add an entry in `src/data/images.ts` with `src`, `srcSet`, `alt`, `width` and `height`. The layout doesn't change.
 
-**Current status:** no generated illustrations are integrated. The build environment had no image-generation capability, so all 38 slots show placeholders. Every prompt is ready in the manifest.
+**Current status:** all 35 scenario thumbnails and both homepage audience images have generated artwork, with 1600×900 and 800×450 WebP exports in `public/images/`. The home hero retains its existing treatment. Art direction is in `docs/visual-language.md`; generation prompts are in `docs/thumbnail-prompts.json`.
 
 ## Deploy
 

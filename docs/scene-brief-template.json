@@ -1,0 +1,56 @@
+{
+  "version": "1.0",
+  "project": "InScene",
+  "visual_direction": "Framed Reality",
+  "canonical_scene_key": "simulation.REPLACE_SLUG",
+  "target_audience": "police | school-6-8 | school-9-10 | school-11-12",
+  "learning_objective": "",
+  "learner_role": "",
+  "shot": "establish | engage | inspect",
+  "scene_state": {
+    "location": "",
+    "time_of_day": "",
+    "situation": "",
+    "canonical_story_reference": ""
+  },
+  "characters": [
+    {
+      "character_id": "",
+      "reference_image_path": "",
+      "age_range": "",
+      "wardrobe": "",
+      "pose": "",
+      "expression": ""
+    }
+  ],
+  "interactive_props": [
+    {
+      "prop_id": "",
+      "scene_position": "",
+      "learner_action": "",
+      "separate_asset": true
+    }
+  ],
+  "composition": {
+    "focal_action": "",
+    "safe_zone": "central 60% width x 70% height",
+    "camera": "eye-level/modest-three-quarter",
+    "lighting": "soft diffuse upper-left"
+  },
+  "output": {
+    "asset_type": "website-thumbnail | backdrop | character-sprite | prop",
+    "aspect_ratio": "16:9",
+    "target_dimensions": "1600x900",
+    "image_format": "webp",
+    "text_baked_into_image": false
+  },
+  "style_reference": "InScene_Visual_Language_v1.md",
+  "content_safety_and_qa": {
+    "no_real_insignia": true,
+    "no_baked_ui": true,
+    "no_graphic_content": true,
+    "identity_continuity_required": true,
+    "subject_matter_review_needed": false
+  },
+  "status": "brief-draft"
+}
