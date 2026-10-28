@@ -9,13 +9,13 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[640px] bg-[radial-gradient(60%_50%_at_70%_0%,rgb(37_99_235/0.07),transparent_70%),radial-gradient(40%_40%_at_10%_10%,rgb(18_184_166/0.06),transparent_70%)]" />
-      <div className="container-site grid items-center gap-12 pb-20 pt-10 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:pb-28 lg:pt-20">
-        <div>
-          <h1 className="display max-w-[13ch]">{brand.tagline}</h1>
-          <p className="lead mt-6 max-w-[34rem] text-ink-500">
+      <div className="container-site grid items-center gap-6 pb-20 pt-10 sm:gap-8 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:pb-28 lg:pt-20">
+        <div className="contents lg:block">
+          <h1 className="display order-1 max-w-[13ch]">{brand.tagline}</h1>
+          <p className="lead order-2 max-w-[34rem] text-ink-500 lg:mt-6">
             Step into realistic, AI-driven scenarios, make decisions and learn from how they play out.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="order-4 flex flex-col gap-3 sm:flex-row lg:mt-9">
             <ButtonLink to="/products" size="lg">
               Explore Simulations
               <ArrowRight className="size-4" aria-hidden="true" />
@@ -25,13 +25,15 @@ export function Hero() {
               <ArrowDown className="size-4" aria-hidden="true" />
             </ButtonAnchor>
           </div>
-          <p className="mt-8 text-sm text-ink-500">
+          <p className="order-5 text-sm text-ink-500 lg:mt-8">
             Built for <span className="font-medium text-navy">police training institutions</span> and{' '}
             <span className="font-medium text-navy">schools, Grades 6–12</span>.
           </p>
         </div>
 
-        <HeroVisual />
+        <div className="order-3 min-w-0 lg:order-none lg:col-start-2 lg:row-start-1">
+          <HeroVisual />
+        </div>
       </div>
     </section>
   )
