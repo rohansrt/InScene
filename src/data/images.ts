@@ -5,7 +5,7 @@
  *
  * Example entry once an illustration exists:
  *   'simulation.fair-exam-march': {
- *     src: '/images/simulations/fair-exam-march.webp',
+ *     src: `${import.meta.env.BASE_URL}images/simulations/fair-exam-march.webp`,
  *     alt: 'Officer speaking calmly with a student organiser at a peaceful march',
  *     width: 1600,
  *     height: 900,

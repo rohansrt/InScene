@@ -79,7 +79,7 @@ Every image slot uses a semantic key, such as `home.hero` or `simulation.fair-ex
 
 `npm run build` produces a static site in `dist/`. Because this is a client-side router, the host must serve `index.html` for unknown paths:
 
-- **Vercel:** import the repo. Framework preset Vite, output directory `dist`. `vercel.json` already contains the rewrite.
+- **GitHub Pages (current):** `.github/workflows/deploy.yml` builds and deploys on every push to `main`. In the repo's Settings → Pages, set Source to "GitHub Actions". The workflow sets the base path from the Pages URL and copies `index.html` to `404.html` so direct links to `/products` etc. work.
 - **Netlify / Cloudflare Pages:** build command `npm run build`, publish directory `dist`. `public/_redirects` already contains the SPA fallback.
 - **Any other static host (S3 + CloudFront, Nginx, …):** configure a fallback to `/index.html` with status 200.
 

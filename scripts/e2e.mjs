@@ -272,7 +272,7 @@ async function main() {
     await page.getByRole('button', { name: 'Close simulation preview' }).dblclick()
     await modal(page).waitFor({ state: 'detached' })
     await page.waitForTimeout(300)
-    assert(new URL(page.url()).pathname === '/products', `navigated away to ${page.url()}`)
+    assert(new URL(page.url()).pathname === new URL(BASE + '/products').pathname, `navigated away to ${page.url()}`)
   })
 
   await check('Regression: double-click on a card adds one history entry', async () => {
