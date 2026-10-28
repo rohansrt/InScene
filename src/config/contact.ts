@@ -14,7 +14,7 @@ export const contact = {
       name: 'Rohan Saraswat',
       role: 'Co-founder',
       phone: { display: '+91 89794 84758', href: 'tel:+918979484758' },
-      linkedinUrl: null,
+      linkedinUrl: 'https://www.linkedin.com/in/rohansrt/',
     },
   ] satisfies Founder[],
 }
