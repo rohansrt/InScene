@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+*.tsbuildinfo
+
+# QA output (screenshots from scripts/e2e.mjs)
+qa-artifacts/
+
+# source documents are kept out of the public site
+*.pdf
+
+# env / editor / OS
+.env
+.env.*
+!.env.example
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.log
+npm-debug.log*

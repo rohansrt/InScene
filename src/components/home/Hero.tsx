@@ -1,0 +1,90 @@
+import { ArrowRight, ArrowDown } from 'lucide-react'
+import { brand } from '../../config/brand'
+import { imageRegistry } from '../../data/images'
+import { ButtonLink, ButtonAnchor } from '../ui/Button'
+import { ScenarioImage } from '../simulation/ScenarioImage'
+
+export function Hero() {
+  return (
+    <section className="relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[640px] bg-[radial-gradient(60%_50%_at_70%_0%,rgb(37_99_235/0.07),transparent_70%),radial-gradient(40%_40%_at_10%_10%,rgb(18_184_166/0.06),transparent_70%)]" />
+      <div className="container-site grid items-center gap-12 pb-20 pt-10 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:pb-28 lg:pt-20">
+        <div>
+          <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white py-1.5 pl-2 pr-3.5 text-[0.8125rem] font-medium text-ink-600 shadow-xs">
+            <span className="ml-1 size-2 rounded-full bg-teal" aria-hidden="true" />
+            AI-powered scenario learning
+          </p>
+          <h1 className="display mt-6 max-w-[13ch]">{brand.tagline}</h1>
+          <p className="lead mt-6 max-w-[34rem] text-ink-500">
+            Experience realistic scenarios, make meaningful decisions, and build the skills to navigate real-world
+            situations.
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <ButtonLink to="/products" size="lg">
+              Explore Simulations
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </ButtonLink>
+            <ButtonAnchor href="#how-it-works" variant="secondary" size="lg">
+              How It Works
+              <ArrowDown className="size-4" aria-hidden="true" />
+            </ButtonAnchor>
+          </div>
+          <p className="mt-8 text-sm text-ink-500">
+            Built for <span className="font-medium text-navy">police training institutions</span> and{' '}
+            <span className="font-medium text-navy">schools, Grades 6–12</span>.
+          </p>
+        </div>
+
+        <HeroVisual />
+      </div>
+    </section>
+  )
+}
+
+function HeroVisual() {
+  if (imageRegistry['home.hero']) {
+    return (
+      <ScenarioImage
+        imageKey="home.hero"
+        alt="A learner stepping through a doorway into an interactive scenario"
+        tone="brand"
+        aspect="aspect-[16/11] lg:aspect-[4/3]"
+        className="rounded-[24px] shadow-lift"
+        priority
+      />
+    )
+  }
+  // Placeholder composition until the hero illustration is produced.
+  return (
+    <div
+      className="relative aspect-[16/11] overflow-hidden rounded-[24px] bg-[linear-gradient(140deg,#f1f5fe_0%,#e4edfc_45%,#e0f4f2_100%)] shadow-[0_0_0_1px_rgb(16_36_58/0.06),0_30px_60px_-30px_rgb(16_36_58/0.35)] lg:aspect-[4/3]"
+      data-image-key="home.hero"
+      data-placeholder="true"
+      aria-hidden="true"
+    >
+      <div className="bg-grid absolute inset-0 opacity-80 [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_80%)]" />
+      <div className="absolute left-1/2 top-1/2 size-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue/15 blur-3xl" />
+      {/* receding scene layers */}
+      {[0, 1, 2].map((i) => (
+        <div
+          key={i}
+          className="absolute rounded-2xl border border-white/90 bg-white/40 shadow-[0_10px_30px_-12px_rgb(16_36_58/0.25)] backdrop-blur-[2px]"
+          style={{
+            left: `${14 + i * 9}%`,
+            top: `${16 + i * 5}%`,
+            width: `${46 - i * 4}%`,
+            height: `${66 - i * 10}%`,
+            opacity: 1 - i * 0.22,
+            transform: `perspective(900px) rotateY(${18 - i * 4}deg)`,
+          }}
+        />
+      ))}
+      <div className="absolute inset-y-0 right-[16%] flex items-center">
+        <img src={brand.markLargeSrc} alt="" width={320} height={376} className="h-auto w-[clamp(84px,17vw,150px)] drop-shadow-[0_18px_30px_rgb(37_99_235/0.35)]" />
+      </div>
+      {import.meta.env.DEV && (
+        <span className="absolute right-3 top-3 rounded bg-white/80 px-1.5 py-0.5 font-mono text-[10px] text-ink-500">home.hero</span>
+      )}
+    </div>
+  )
+}
