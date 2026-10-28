@@ -20,25 +20,17 @@ interface Props {
   iconSize?: 'sm' | 'md' | 'lg'
 }
 
-const toneStyles: Record<ImageTone, { bg: string; tile: string; frame: string; glow: string }> = {
-  police: {
-    bg: 'bg-[linear-gradient(135deg,#edf2fb_0%,#dfe8f8_55%,#d3e0f7_100%)]',
-    tile: 'text-navy',
-    frame: 'border-navy/10',
-    glow: 'bg-blue/20',
-  },
-  school: {
-    bg: 'bg-[linear-gradient(135deg,#ecf8f7_0%,#e4f1fa_55%,#dde8fb_100%)]',
-    tile: 'text-teal-700',
-    frame: 'border-teal/20',
-    glow: 'bg-teal/25',
-  },
-  brand: {
-    bg: 'bg-[linear-gradient(135deg,#eef3fe_0%,#e3eefc_50%,#e2f5f3_100%)]',
-    tile: 'text-blue',
-    frame: 'border-blue/15',
-    glow: 'bg-blue/20',
-  },
+const toneStyles: Record<ImageTone, { from: string; to: string; orb: string }> = {
+  police: { from: '#0d1f35', to: '#1e4fd0', orb: '#5b8cff' },
+  school: { from: '#0b2f3a', to: '#0d8f86', orb: '#4fe0cf' },
+  brand: { from: '#10243a', to: '#1f5fd6', orb: '#3fd2c0' },
+}
+
+/** Small deterministic hash so each scene gets its own composition. */
+function seed(key: string) {
+  let h = 0
+  for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) >>> 0
+  return h
 }
 
 /**
@@ -79,8 +71,12 @@ export function ScenarioImage({
   }
 
   const t = toneStyles[tone]
-  const tileSize = { sm: 'size-11 rounded-xl', md: 'size-14 rounded-2xl', lg: 'size-20 rounded-[22px]' }[iconSize]
-  const glyph = { sm: 'size-5', md: 'size-7', lg: 'size-9' }[iconSize]
+  const h = seed(imageKey)
+  const angle = 120 + (h % 60)
+  const orbX = 15 + (h % 50)
+  const orbY = 10 + ((h >> 6) % 40)
+  const tileSize = { sm: 'size-12', md: 'size-16', lg: 'size-24' }[iconSize]
+  const glyph = { sm: 'size-5', md: 'size-7', lg: 'size-10' }[iconSize]
 
   return (
     <div
@@ -89,23 +85,31 @@ export function ScenarioImage({
       data-placeholder="true"
       aria-hidden="true"
     >
-      <div className={cn('absolute inset-0', t.bg, zoom)}>
-        <div className="bg-grid absolute inset-0 opacity-70 [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_75%)]" />
-        <div className={cn('absolute left-1/2 top-1/2 size-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl', t.glow)} />
-        {/* layered "scene frames", echoing the doorway mark */}
-        <div className={cn('absolute left-[22%] top-[20%] h-[56%] w-[40%] -rotate-3 rounded-xl border bg-white/35', t.frame)} />
-        <div className={cn('absolute left-[38%] top-[24%] h-[56%] w-[40%] rotate-2 rounded-xl border bg-white/45', t.frame)} />
+      <div
+        className={cn('absolute inset-0', zoom)}
+        style={{ background: `linear-gradient(${angle}deg, ${t.from} 0%, ${t.to} 100%)` }}
+      >
+        <div
+          className="absolute size-[70%] rounded-full opacity-50 blur-3xl"
+          style={{ left: `${orbX}%`, top: `${orbY}%`, background: t.orb }}
+        />
+        <div className="absolute -bottom-1/4 -right-1/4 size-[60%] rounded-full bg-white/10 blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(rgb(255_255_255/0.14)_1px,transparent_1px)] [background-size:14px_14px] [mask-image:radial-gradient(ellipse_at_center,black_10%,transparent_70%)]" />
         <div className="absolute inset-0 grid place-items-center">
-          <div className={cn('grid place-items-center bg-white shadow-[0_8px_24px_-6px_rgb(16_36_58/0.18)] ring-1 ring-navy/5', tileSize, t.tile)}>
-            {icon ? <SimulationIcon name={icon} className={glyph} /> : null}
+          <div className="relative grid place-items-center">
+            <span className="absolute size-[260%] rounded-full border border-white/10" />
+            <span className="absolute size-[190%] rounded-full border border-white/15" />
+            <span
+              className={cn(
+                'relative grid place-items-center rounded-full bg-white/15 text-white ring-1 ring-white/30 backdrop-blur-sm shadow-[0_12px_30px_-10px_rgb(0_0_0/0.45)]',
+                tileSize,
+              )}
+            >
+              {icon ? <SimulationIcon name={icon} className={glyph} /> : null}
+            </span>
           </div>
         </div>
       </div>
-      {import.meta.env.DEV && (
-        <span className="absolute bottom-2 left-2 rounded bg-white/80 px-1.5 py-0.5 font-mono text-[10px] text-ink-500">
-          {imageKey}
-        </span>
-      )}
     </div>
   )
 }

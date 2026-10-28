@@ -70,9 +70,9 @@ export function SiteHeader() {
                   className={({ isActive }) =>
                     cn(
                       'relative inline-flex h-9 items-center rounded-lg px-3.5 text-sm font-medium transition-colors',
-                      isActive ? 'text-navy' : 'text-ink-500 hover:bg-surface hover:text-navy',
+                      isActive ? 'bg-blue-50 font-semibold text-blue-700' : 'text-ink-500 hover:bg-surface hover:text-navy',
                       isActive &&
-                        'after:absolute after:inset-x-3.5 after:-bottom-[13px] after:h-0.5 after:rounded-full after:bg-blue',
+                        'after:absolute after:inset-x-3.5 after:-bottom-[13px] after:h-[3px] after:rounded-full after:bg-blue',
                     )
                   }
                 >

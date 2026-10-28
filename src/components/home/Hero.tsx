@@ -10,14 +10,9 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[640px] bg-[radial-gradient(60%_50%_at_70%_0%,rgb(37_99_235/0.07),transparent_70%),radial-gradient(40%_40%_at_10%_10%,rgb(18_184_166/0.06),transparent_70%)]" />
       <div className="container-site grid items-center gap-12 pb-20 pt-10 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:pb-28 lg:pt-20">
         <div>
-          <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white py-1.5 pl-2 pr-3.5 text-[0.8125rem] font-medium text-ink-600 shadow-xs">
-            <span className="ml-1 size-2 rounded-full bg-teal" aria-hidden="true" />
-            AI-powered scenario learning
-          </p>
-          <h1 className="display mt-6 max-w-[13ch]">{brand.tagline}</h1>
+          <h1 className="display max-w-[13ch]">{brand.tagline}</h1>
           <p className="lead mt-6 max-w-[34rem] text-ink-500">
-            Experience realistic scenarios, make meaningful decisions, and build the skills to navigate real-world
-            situations.
+            Step into realistic scenarios, make decisions and learn from how they play out.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <ButtonLink to="/products" size="lg">
@@ -82,9 +77,6 @@ function HeroVisual() {
       <div className="absolute inset-y-0 right-[16%] flex items-center">
         <img src={brand.markLargeSrc} alt="" width={320} height={376} className="h-auto w-[clamp(84px,17vw,150px)] drop-shadow-[0_18px_30px_rgb(37_99_235/0.35)]" />
       </div>
-      {import.meta.env.DEV && (
-        <span className="absolute right-3 top-3 rounded bg-white/80 px-1.5 py-0.5 font-mono text-[10px] text-ink-500">home.hero</span>
-      )}
     </div>
   )
 }

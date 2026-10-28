@@ -5,22 +5,22 @@ const steps = [
   {
     icon: DoorOpen,
     title: 'Enter a realistic scenario',
-    text: 'Begin inside a situation drawn from real contexts — a station front desk, a school playground, a busy junction.',
+    text: 'Start inside a situation drawn from real life.',
   },
   {
     icon: MessagesSquare,
     title: 'Interact and make decisions',
-    text: 'Speak with the people involved, examine the information available and choose how to respond.',
+    text: 'Talk to the people involved and choose how to respond.',
   },
   {
     icon: Route,
     title: 'Experience how it unfolds',
-    text: 'Choices shape what happens next — how characters react, what you learn and which options remain.',
+    text: 'Your choices shape what happens next.',
   },
   {
     icon: NotebookPen,
     title: 'Reflect, learn and improve',
-    text: 'A debrief connects what happened to the reasoning behind it: strengths, trade-offs and missed cues.',
+    text: 'A short debrief shows what worked and what to try next time.',
   },
 ]
 
@@ -31,9 +31,6 @@ export function HowItWorks() {
         <Reveal className="max-w-2xl">
           <p className="eyebrow">How InScene works</p>
           <h2 className="h2 mt-3">Learning by stepping inside the situation.</h2>
-          <p className="lead mt-5 text-ink-500">
-            Every InScene experience follows the same learning approach — from the first scene to the final reflection.
-          </p>
         </Reveal>
         <ol className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (

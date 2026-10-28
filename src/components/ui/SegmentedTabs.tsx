@@ -78,8 +78,8 @@ export function SegmentedTabs<T extends string>({
               size === 'lg' ? 'h-11 px-4 text-[0.9375rem] sm:px-5' : 'h-9 px-3 text-sm sm:px-4',
               fullWidth && 'flex-1',
               selected
-                ? 'bg-white text-navy shadow-card font-semibold'
-                : 'text-ink-500 hover:text-navy',
+                ? 'bg-blue text-white shadow-card font-semibold'
+                : 'text-ink-500 hover:bg-white hover:text-navy',
             )}
           >
             {opt.label}

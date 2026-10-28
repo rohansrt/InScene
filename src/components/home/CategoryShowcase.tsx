@@ -12,9 +12,8 @@ const categories = [
     imageKey: 'home.police-category',
     icon: 'megaphone',
     title: 'Police Training',
-    intro:
-      'Public order, front-desk first response, community safety, cyber first response and incident coordination — practised through calm, rights-respecting decisions.',
-    meta: `${count('police')} simulations · Basic and Advanced levels`,
+    intro: 'Public order, first response and community safety scenarios.',
+    meta: `${count('police')} simulations`,
     to: '/products?category=police',
   },
   {
@@ -22,9 +21,8 @@ const categories = [
     imageKey: 'home.school-category',
     icon: 'book',
     title: 'School Training',
-    intro:
-      'Academic and non-academic scenarios for Grades 6–8, 9–10 and 11–12 — from fair tests and budgets to digital citizenship and conflict resolution.',
-    meta: `${count('school')} simulations · Grades 6–8, 9–10, 11–12`,
+    intro: 'Academic and life skills scenarios for Grades 6 to 12.',
+    meta: `${count('school')} simulations`,
     to: '/products?category=school',
   },
 ]
@@ -50,7 +48,8 @@ export function CategoryShowcase() {
                   alt={`${c.title} at InScene`}
                   tone={c.key}
                   icon={c.icon}
-                  iconSize="lg"
+                  iconSize="md"
+                  aspect="aspect-[21/9]"
                   zoomOnHover
                 />
                 <div className="flex flex-1 flex-col p-6 sm:p-8">

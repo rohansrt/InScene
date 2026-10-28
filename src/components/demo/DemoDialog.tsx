@@ -70,7 +70,7 @@ export function DemoDialog({ onClose, returnFocusRef }: { onClose: () => void; r
             Experience InScene
           </h2>
           <p id={`${uid}-desc`} className="mt-2.5 leading-relaxed text-ink-500">
-            Step into a realistic situation, talk with the people in it, make decisions and see how things unfold — then
+            Step into a realistic situation, talk with the people in it, make decisions and see how things unfold, then
             reflect on what you would do differently. Choose a track to preview.
           </p>
 

@@ -15,7 +15,7 @@ export default function ReachOut() {
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch {
-      /* clipboard unavailable — the mailto link remains */
+      /* clipboard unavailable; the mailto link remains */
     }
   }
 

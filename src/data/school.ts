@@ -92,7 +92,7 @@ export const schoolSimulations: Simulation[] = [
     duration: SHORT,
     complexity: 'Hands-on model; about 10 interaction points',
     summary:
-      'Muddy demonstration water, cloth, gravel and sand. Propose a way to remove visible particles — and decide what the result does not prove.',
+      'Muddy demonstration water, cloth, gravel and sand. Propose a way to remove visible particles and decide what the result does not prove.',
     situation:
       'A class is preparing for a nature camp. The available demonstration water looks muddy, and the student team has cloth, gravel, sand and a settling container. They must propose a sensible way to remove visible particles and decide what the result does and does not prove.',
     mission:
@@ -162,7 +162,7 @@ export const schoolSimulations: Simulation[] = [
     duration: SHORT,
     complexity: 'Budget constraint; about 10 interaction points',
     summary:
-      'Rs 600 to order snacks for 24 students — then five more join without any extra budget. Plan with unit prices and fairness.',
+      'Rs 600 to order snacks for 24 students and then five more join without any extra budget. Plan with unit prices and fairness.',
     situation:
       'A student committee has Rs 600 to order snacks for a club meeting. There are 24 students, several menu options and different pack sizes. After the first order is planned, five more students are added without increasing the budget.',
     mission:
@@ -234,7 +234,7 @@ export const schoolSimulations: Simulation[] = [
     duration: SHORT,
     complexity: 'Everyday choices; about 10 interaction points',
     summary:
-      'A snack wrapper is dropped during recess — and the nearest bin is overflowing. Choose a respectful, practical response.',
+      'A snack wrapper is dropped during recess and the nearest bin is overflowing. Choose a respectful, practical response.',
     situation:
       'During recess, a student drops a snack wrapper and walks away. A friend notices, but the closest bin is overflowing. The learner can respond to the litter, speak to the student, locate another bin or report the overflowing bin.',
     mission:
@@ -374,7 +374,7 @@ export const schoolSimulations: Simulation[] = [
     duration: SHORT,
     complexity: 'Dialogue and mediation; about 10 interaction points',
     summary:
-      'A close match ends in a disputed run-out, voices rise and sides form. Help the group resolve it fairly — without pretending everyone will be pleased.',
+      'A close match ends in a disputed run-out, voices rise and sides form. Help the group resolve it fairly, without pretending everyone will be pleased.',
     situation:
       'A close cricket match ends in a disputed run-out. One player starts shouting, others take sides and the next game is about to start. The learner must help the group address the disagreement fairly without pretending everyone will be pleased.',
     mission:
@@ -483,7 +483,7 @@ export const schoolSimulations: Simulation[] = [
     duration: MID,
     complexity: 'Evidence investigation; about 15 interaction points',
     summary:
-      'Fish are found dead in a neighbourhood pond after heavy rain. Residents blame litter, algae or runoff — investigate without jumping to conclusions.',
+      'Fish are found dead in a neighbourhood pond after heavy rain. Residents blame litter, algae or runoff. Investigate without jumping to conclusions.',
     situation:
       'Several fish are found dead in a neighbourhood pond after heavy rain. Residents blame litter, algae or fertiliser runoff, but the initial evidence is incomplete. The student team must investigate possible causes without jumping to conclusions.',
     mission:
@@ -519,7 +519,7 @@ export const schoolSimulations: Simulation[] = [
     duration: MID,
     complexity: 'Survey redesign; about 15 interaction points',
     summary:
-      '“80 percent prefer online homework” — but the survey was posted online and barely reached students with limited connectivity. Redesign it.',
+      '“80 percent prefer online homework”, but the survey was posted online and barely reached students with limited connectivity. Redesign it.',
     situation:
       'A student council survey reports that 80 percent of students prefer online homework. The school is considering changing its homework policy, but the research team learns that the survey was posted in an online group and received very few responses from students with limited connectivity.',
     mission:
@@ -672,7 +672,7 @@ export const schoolSimulations: Simulation[] = [
       'Practise assertive communication, shared ownership and fair workload renegotiation under time pressure.',
     howItPlays: [
       'Choose whether to confront the group member, redo the work without discussion or renegotiate tasks and scope.',
-      'Additional context for the missed meetings is revealed — without assuming that context removes the impact on the team.',
+      'Additional context for the missed meetings is revealed, without assuming that context removes the impact on the team.',
       'Create a short plan with owners, deliverables and check-in times.',
       'Decide how to document contributions and raise an unresolved fairness concern with the teacher if needed.',
       'Review the team outcome and the quality of communication, not only the submitted grade.',
@@ -999,7 +999,7 @@ export const schoolSimulations: Simulation[] = [
     duration: LONG,
     complexity: 'Cash-flow planning; about 20 interaction points',
     summary:
-      'A first month away from home on a fictional Rs 12,000 allowance — food, commuting, accommodation, data and an unexpected cost. Build a budget that works.',
+      'A first month away from home on a fictional Rs 12,000 allowance: food, commuting, accommodation, data and an unexpected cost. Build a budget that works.',
     situation:
       'A student planning a first month away from home for a course or internship has a fictional monthly allowance of Rs 12,000. They need to plan food, commuting, accommodation contributions, mobile data and personal expenses, while preparing for an unexpected cost.',
     mission:
