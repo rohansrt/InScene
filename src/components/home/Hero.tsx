@@ -1,6 +1,7 @@
 import { ArrowRight, ArrowDown } from 'lucide-react'
+import { useLocation } from 'react-router-dom'
 import { brand } from '../../config/brand'
-import { imageRegistry } from '../../data/images'
+import { assetUrl, imageRegistry } from '../../assets'
 import { ButtonLink, ButtonAnchor } from '../ui/Button'
 import { ScenarioImage } from '../simulation/ScenarioImage'
 
@@ -12,7 +13,7 @@ export function Hero() {
         <div>
           <h1 className="display max-w-[13ch]">{brand.tagline}</h1>
           <p className="lead mt-6 max-w-[34rem] text-ink-500">
-            Step into realistic scenarios, make decisions and learn from how they play out.
+            Step into realistic, AI-driven scenarios, make decisions and learn from how they play out.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <ButtonLink to="/products" size="lg">
@@ -37,11 +38,21 @@ export function Hero() {
 }
 
 function HeroVisual() {
+  const { search } = useLocation()
+  const concept = import.meta.env.DEV ? new URLSearchParams(search).get('hero') : null
+  const conceptDescriptions: Record<string, string> = {
+    doorway: 'An open blue doorway into a shaded learning courtyard',
+    'decision-landscape': 'A branching blue path connecting everyday learning environments',
+    'scenario-stage': 'A miniature classroom, courtyard and civic counter connected by a blue path',
+  }
+  if (concept && conceptDescriptions[concept]) {
+    return <img src={assetUrl(`images/homepage/hero-concepts/${concept}.webp`)} alt={conceptDescriptions[concept]} width={1200} height={900} className="aspect-[16/11] w-full rounded-[24px] object-cover shadow-lift lg:aspect-[4/3]" />
+  }
   if (imageRegistry['home.hero']) {
     return (
       <ScenarioImage
         imageKey="home.hero"
-        alt="A learner stepping through a doorway into an interactive scenario"
+        alt="An open blue doorway leads into a learning scenario"
         tone="brand"
         aspect="aspect-[16/11] lg:aspect-[4/3]"
         className="rounded-[24px] shadow-lift"

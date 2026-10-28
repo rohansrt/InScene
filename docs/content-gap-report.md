@@ -4,7 +4,7 @@ Source documents:
 - **Police:** *InScene Police Training Scenario Library* (13 pp.) — 5 scenarios.
 - **School:** *YOPPI Scenario Learning for Schools* (31 pp.) — 30 scenario concepts.
 
-All 35 simulations are imported into `src/data/police.ts` and `src/data/school.ts`. Every scenario carries a `sourceReference` (document, code, pages). This report lists what the sources do **not** provide, and how the site handles each gap. Nothing in the list below was invented to fill it.
+All 35 simulations are imported into `src/data/simulations/police.ts` and `src/data/simulations/school.ts`. Every scenario carries a `sourceReference` (document, code, pages). This report lists what the sources do **not** provide, and how the site handles each gap. Nothing in the list below was invented to fill it.
 
 ## Import summary
 

@@ -1,4 +1,5 @@
 import { Reveal } from '../ui/Reveal'
+import { assetUrl } from '../../assets'
 
 const steps = [
   {
@@ -9,7 +10,7 @@ const steps = [
   {
     image: 'make-decisions',
     title: 'Interact and make decisions',
-    text: 'Talk to the people involved and choose how to respond.',
+    text: 'Talk with AI characters, explore different perspectives and choose how to respond.',
   },
   {
     image: 'experience-outcomes',
@@ -38,14 +39,13 @@ export function HowItWorks() {
                 <div className="relative h-full rounded-2xl bg-white p-6 shadow-card">
                   <div className="relative overflow-hidden rounded-xl bg-blue-50">
                     <img
-                      src={`${import.meta.env.BASE_URL}images/how-it-works/${s.image}.webp`}
+                      src={assetUrl(`images/how-it-works/${s.image}.webp`)}
                       alt=""
                       width={768}
                       height={512}
                       loading="lazy"
                       className="aspect-[3/2] w-full object-cover"
                     />
-                    <span className="absolute right-3 top-3 rounded-full bg-white/90 px-2 py-1 font-mono text-xs font-medium text-ink-500">0{i + 1}</span>
                   </div>
                   <h3 className="mt-6 text-lg font-[620] tracking-[-0.015em]">{s.title}</h3>
                   <p className="mt-2 text-[0.9375rem] leading-relaxed text-ink-500">{s.text}</p>

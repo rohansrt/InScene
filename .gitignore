@@ -24,3 +24,7 @@ work/
 .idea/
 *.log
 npm-debug.log*
+
+# local package-manager cache
+.pnpm-store/
+.vite-cache/

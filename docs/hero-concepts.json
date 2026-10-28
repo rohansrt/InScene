@@ -1,0 +1,20 @@
+{
+  "mode": "built-in image_gen",
+  "options": [
+    {
+      "name": "doorway",
+      "prompt": "Use case: illustration-story. Create one premium homepage hero illustration for InScene, an experiential scenario learning platform for schools and police training. Landscape 4:3 framing. Mature editorial illustration, stylized matte paper sculptural forms, soft diffused light and restrained layered depth, not photorealistic. Blue #3268FF, deep navy #13283C, pale blue #EAF0FF, off-white and muted teal. No people, characters, hands, faces, text, letters, numbers, logos, watermarks, UI screenshots or glossy sci-fi. A single coherent art-directed scene, ample breathing room, focal objects in central 70% for crops, rich yet uncluttered. Subject: A striking freestanding cobalt doorway, slightly open, on a curved pale platform. Inside the doorway is a miniature believable Indian school/community courtyard with a shaded tree, bench, steps and noticeboard with no writing. The exterior is abstract light space, the inside a warm nuanced real-world environment. A blue path flows from foreground across the threshold. Strong visual contrast between possibility outside and a meaningful situation inside. Sophisticated architectural illustration, no people.",
+      "path": "public/images/homepage/hero-concepts/doorway.webp"
+    },
+    {
+      "name": "decision-landscape",
+      "prompt": "Use case: illustration-story. Create one premium homepage hero illustration for InScene, an experiential scenario learning platform for schools and police training. Landscape 4:3 framing. Mature editorial illustration, stylized matte paper sculptural forms, soft diffused light and restrained layered depth, not photorealistic. Blue #3268FF, deep navy #13283C, pale blue #EAF0FF, off-white and muted teal. No people, characters, hands, faces, text, letters, numbers, logos, watermarks, UI screenshots or glossy sci-fi. A single coherent art-directed scene, ample breathing room, focal objects in central 70% for crops, rich yet uncluttered. Subject: An elegant continuous cobalt route across a floating sculptural landscape branches into two paths and reconnects at a higher platform. Along the way, tiny everyday environmental fragments: a classroom desk with notebook, a neighbourhood bench beside a tree, a civic building arch. Arrange as one coherent island, not collage panels. Emphasize the key fork, one selected path darker, alternatives pale. Calm confident light and editorial sophistication.",
+      "path": "public/images/homepage/hero-concepts/decision-landscape.webp"
+    },
+    {
+      "name": "scenario-stage",
+      "prompt": "Use case: illustration-story. Create one premium homepage hero illustration for InScene, an experiential scenario learning platform for schools and police training. Landscape 4:3 framing. Mature editorial illustration, stylized matte paper sculptural forms, soft diffused light and restrained layered depth, not photorealistic. Blue #3268FF, deep navy #13283C, pale blue #EAF0FF, off-white and muted teal. No people, characters, hands, faces, text, letters, numbers, logos, watermarks, UI screenshots or glossy sci-fi. A single coherent art-directed scene, ample breathing room, focal objects in central 70% for crops, rich yet uncluttered. Subject: A beautifully composed open-sided architectural miniature of a real-world community learning environment on a rounded plinth: a school desk with open notebook, a shaded courtyard bench with tree, and a civic service counter joined by an uninterrupted blue walkway. Three layered rounded architectural frames recede around the scene like theatrical wings, suggesting stepping inside a simulation. No people, no text. One composed miniature, not separate cards.",
+      "path": "public/images/homepage/hero-concepts/scenario-stage.webp"
+    }
+  ]
+}

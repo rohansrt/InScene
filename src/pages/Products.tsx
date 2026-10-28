@@ -1,6 +1,6 @@
 import { useEffect, useId, useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { GraduationCap, ShieldHalf, Info } from 'lucide-react'
+import { GraduationCap, ShieldHalf } from 'lucide-react'
 import { SimulationCard } from '../components/simulation/SimulationCard'
 import { Chip } from '../components/ui/Chip'
 import { SegmentedTabs } from '../components/ui/SegmentedTabs'
@@ -167,21 +167,7 @@ export default function Products() {
         )}
         </div>
 
-        <div className="mt-10 flex gap-3 rounded-xl border border-line bg-surface p-4 text-sm leading-relaxed text-ink-500">
-          <Info className="mt-0.5 size-4 shrink-0 text-navy" aria-hidden="true" />
-          {category === 'police' ? (
-            <p>
-              Police scenarios are proposed designs. They are to be reviewed with experienced police trainers and
-              jurisdiction-specific SOPs before being used as operational instruction. Durations marked “proposed” are
-              illustrative.
-            </p>
-          ) : (
-            <p>
-              Target lengths and interaction counts are flexible design targets. Scenario content is to be validated by
-              teachers or subject-matter experts and adapted to the relevant board syllabus before classroom use.
-            </p>
-          )}
-        </div>
+
       </section>
     </div>
   )

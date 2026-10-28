@@ -4,7 +4,7 @@
 **Status:** Proposed art-direction extension to the existing InScene website design system.  
 **Purpose:** Keep all site illustrations, scenario thumbnails, in-simulation environments, characters, decision interfaces and future motion assets visually consistent.  
 **Intended users:** Designers, image-generation tools, developers and Claude in VS Code.  
-**Source alignment:** `docs/design-system.md`, `docs/image-manifest.json`, `src/styles/index.css`, `src/components/simulation/ScenarioImage.tsx`, `src/data/images.ts` in the InScene repository.
+**Source alignment:** `docs/design-system.md`, `docs/image-manifest.json`, `src/styles/index.css`, `src/components/simulation/ScenarioImage.tsx`, `src/assets/index.ts` in the InScene repository.
 
 ---
 
@@ -205,7 +205,7 @@ Example: For the `fair-exam-march` card, set MAIN ACTION to 'a calm officer list
 
 **Phase 2 — build reusable libraries**: Produce environment plates, recurring characters with expression variations, common props, and UI overlays; make a small sample of each interactive state.
 
-**Phase 3 — integrate existing 38 image slots**: Reuse the canonical `docs/image-manifest.json` prompts and semantic keys. Register finished media in `src/data/images.ts`, export WebP at both widths, review modal crops. **Do not blindly generate 38 images before validating the first three.**
+**Phase 3 — integrate existing 38 image slots**: Reuse the canonical `docs/image-manifest.json` prompts and semantic keys. Register finished media in `src/assets/index.ts`, export WebP at both widths, review modal crops. **Do not blindly generate 38 images before validating the first three.**
 
 **Phase 4 — develop the playable scene system**: Keep state, dialogue, scoring rationale, evidence and hotspots in code/data. Use still art for atmosphere, but dynamic learner choices must be functioning UI. Validate with police and school subject-matter experts where needed.
 

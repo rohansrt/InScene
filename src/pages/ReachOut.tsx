@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { assetUrl } from '../assets'
 import { ArrowUpRight, Check, Copy, Globe, Mail, MessageCircle, Phone } from 'lucide-react'
 import { LinkedInIcon as Linkedin } from '../components/ui/LinkedInIcon'
 import { ButtonAnchor } from '../components/ui/Button'
@@ -86,7 +87,7 @@ function FounderCard({ founder }: { founder: Founder }) {
     <article className="flex h-full flex-col rounded-[20px] bg-white p-7 shadow-card" data-testid="founder-card">
       <div className="flex items-center gap-4">
         <img
-          src={`${import.meta.env.BASE_URL}images/founders/${founder.image}`}
+          src={assetUrl(`images/founders/${founder.image}`)}
           alt={founder.name}
           width={96}
           height={96}

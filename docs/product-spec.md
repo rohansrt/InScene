@@ -37,7 +37,7 @@ Global dialogs: Simulation Preview (+ Coming Soon state), Play a Demo (+ Coming 
 - School only: **grade-band tabs** (Grades 6–8 | 9–10 | 11–12) + **strand chips** (All · Academic · Non-academic).
 - Result line: "10 simulations · Grades 9–10" (`aria-live="polite"`).
 - Police only: review note ("Scenarios are proposed designs pending review by experienced police trainers and jurisdiction-specific SOPs").
-- Grid of `SimulationCard`s rendered from `src/data/simulations.ts`.
+- Grid of `SimulationCard`s rendered from `src/data/simulations/index.ts`.
 - Empty state (cannot occur with current data, kept for safety).
 - All state lives in the URL query (no reloads; refresh/back/forward safe).
 

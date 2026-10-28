@@ -4,7 +4,7 @@ Created 37 distinct images with the built-in ImageGen tool: all 35 canonical sce
 
 Art direction: `visual-language.md`. Prompt set: `thumbnail-prompts.json`. Scene-brief template: `scene-brief-template.json`. The final images interpret the canonical content in `image-manifest.json`; screen-heavy scenes were refined to avoid baked interface graphics.
 
-Final assets live in `public/images/simulations/` and `public/images/home/`. Each has a 1600×900 WebP and an 800×450 derivative. `src/data/images.ts` registers their semantic keys, descriptive alt text and responsive sources using the configured base URL. The wide modal uses a top-aligned crop to preserve faces.
+Final assets live in `public/images/simulations/<slug>/` and `public/images/homepage/`. Each has a 1600×900 WebP and an 800×450 derivative. `src/assets/index.ts` registers their semantic keys, descriptive alt text and responsive sources using the configured base URL. The wide modal uses a top-aligned crop to preserve faces.
 
 Validation completed:
 

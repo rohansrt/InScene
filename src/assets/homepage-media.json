@@ -1,0 +1,17 @@
+{
+  "police-category": {
+    "alt": "Two police officers listen respectfully to a resident in a quiet station courtyard.",
+    "width": 1600,
+    "height": 900
+  },
+  "school-category": {
+    "alt": "Four students discuss a practical science investigation at a school courtyard table.",
+    "width": 1600,
+    "height": 900
+  },
+  "hero": {
+    "alt": "An open blue doorway leads into a shaded school courtyard, with a blue path crossing the threshold.",
+    "width": 1200,
+    "height": 900
+  }
+}

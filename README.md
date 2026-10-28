@@ -43,7 +43,8 @@ The e2e script uses Playwright's bundled Chromium. If that browser isn't install
 
 ```text
 src/
-  data/          simulation catalog (police.ts, school.ts), types, image registry
+  data/simulations/  Learning content, types and catalog queries
+  assets/        Media metadata, image registry and URL helpers
   config/        brand.ts, contact.ts (founder details and LinkedIn URLs), nav.ts
   components/
     layout/      header, mobile menu, footer, layout
@@ -60,20 +61,24 @@ scripts/e2e.mjs  end-to-end interaction tests
 
 ## Editing content
 
-- **Simulations:** edit `src/data/police.ts` or `src/data/school.ts`. Cards, filters, counts and modals all render from this data.
+- **Simulations:** edit `src/data/simulations/police.ts` or `src/data/simulations/school.ts`. Cards, filters, counts and modals all render from this data.
 - **Founder LinkedIn URLs:** set `linkedinUrl` in `src/config/contact.ts`. Until then the site shows a non-clickable placeholder.
 - **Logo:** replace the files in `public/brand/` or change the paths in `src/config/brand.ts`.
 
-## Adding illustrations
+## Assets and future simulation scenes
 
-Every image slot uses a semantic key, such as `home.hero` or `simulation.fair-exam-march`. If no artwork is registered for a key, the slot shows a branded placeholder at the final aspect ratio.
+Media lives in `src/assets/`, separate from simulation learning content in `src/data/simulations/`.
+Each simulation owns `public/images/simulations/<slug>/` with `thumbnail.webp`,
+`thumbnail-800.webp`, and a `scenes/` directory when it has scene artwork.
 
-1. Generate each image from its prompt in `docs/image-manifest.json`. Prompts cover the shared style, palette and negative prompt.
-2. Export it as WebP at 1600×900 (16:9), or 1600×1200 for the 4:3 hero. Add an 800-px version for `srcSet`.
-3. Save it to `public/images/...` at the manifest's `assetPath`.
-4. Add an entry in `src/data/images.ts` with `src`, `srcSet`, `alt`, `width` and `height`. The layout doesn't change.
+Register thumbnail alt text and dimensions in `src/assets/simulation-media.json`.
+Register future scene images in the same simulation's `scenes` object; consume them
+with `getSimulationScene(slug, sceneId)`. Use `assetUrl()` for any public asset URL
+so local development and GitHub Pages subpaths both work.
 
-**Current status:** all 35 scenario thumbnails and both homepage audience images have generated artwork, with 1600×900 and 800×450 WebP exports in `public/images/`. The home hero retains its existing treatment. Art direction is in `docs/visual-language.md`; generation prompts are in `docs/thumbnail-prompts.json`.
+See [the code and asset guide](docs/architecture.md) for the folder tree, example
+scene registration, and validation commands. `npm run validate:assets` checks asset
+references and runs automatically during production builds.
 
 ## Deploy
 

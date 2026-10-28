@@ -1,4 +1,4 @@
-import { imageRegistry } from '../../data/images'
+import { imageRegistry } from '../../assets'
 import { cn } from '../../lib/cn'
 import { SimulationIcon } from './SimulationIcon'
 

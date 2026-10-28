@@ -32,7 +32,7 @@ export function CategoryShowcase() {
     <section className="py-20 sm:py-28">
       <div className="container-site">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">Training experiences</p>
+          <p className="eyebrow">AI-powered learning</p>
           <h2 className="h2 mt-3">Explore our training experiences.</h2>
         </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-2">

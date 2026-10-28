@@ -7,6 +7,7 @@ import { Logo } from '../ui/Logo'
 import { useDemo } from '../demo/DemoContext'
 import { useScrollLock } from '../../hooks/useScrollLock'
 import { navItems } from '../../config/nav'
+import { ProfileMenu } from './ProfileMenu'
 
 
 export function SiteHeader() {
@@ -88,6 +89,7 @@ export function SiteHeader() {
             <Play className="size-3.5 fill-current" aria-hidden="true" />
             Play a Demo
           </Button>
+          <ProfileMenu />
           <button
             type="button"
             className="grid size-10 place-items-center rounded-lg text-navy hover:bg-surface md:hidden"
