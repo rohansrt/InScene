@@ -90,6 +90,7 @@ function SimulationDialog({ sim, onClose, returnFocusRef }: { sim: Simulation; o
             tone={sim.category}
             icon={sim.icon}
             aspect="aspect-[16/8] sm:aspect-[21/8]"
+            className="[&_img]:object-top"
             iconSize="lg"
             sizes="(min-width: 640px) 880px, 100vw"
             priority

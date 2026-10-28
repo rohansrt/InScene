@@ -1,5 +1,5 @@
 # dependencies
-node_modules/
+node_modules
 
 # build output
 dist/
@@ -7,6 +7,9 @@ dist/
 
 # QA output (screenshots from scripts/e2e.mjs)
 qa-artifacts/
+
+# local asset-generation scratch files
+work/
 
 # source documents are kept out of the public site
 *.pdf
