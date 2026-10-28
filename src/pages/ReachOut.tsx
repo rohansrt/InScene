@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { ArrowUpRight, Check, Copy, Mail, Phone } from 'lucide-react'
+import { ArrowUpRight, Check, Copy, Globe, Mail, MessageCircle, Phone } from 'lucide-react'
 import { LinkedInIcon as Linkedin } from '../components/ui/LinkedInIcon'
 import { ButtonAnchor } from '../components/ui/Button'
-import { contact, mailto, type Founder } from '../config/contact'
+import { contact, mailto, whatsappUrl, type Founder } from '../config/contact'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 export default function ReachOut() {
@@ -24,15 +24,22 @@ export default function ReachOut() {
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(50%_60%_at_20%_0%,rgb(18_184_166/0.07),transparent_70%),radial-gradient(50%_60%_at_90%_10%,rgb(37_99_235/0.07),transparent_70%)]" />
       <div className="container-site pt-10 sm:pt-16">
         <div className="max-w-2xl">
-          <p className="eyebrow">Reach out</p>
-          <h1 className="display mt-4 !text-[clamp(2.4rem,3.6vw+1rem,4rem)]">Let's build better learning experiences.</h1>
-          <p className="lead mt-6 text-ink-500">
-            Whether you run a police training institution, lead a school, or want to collaborate on scenario-based
-            learning, we would love to hear from you.
-          </p>
+          <h1 className="display !text-[clamp(2.4rem,3.6vw+1rem,4rem)]">Let's build better learning experiences.</h1>
         </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-[1.15fr_1fr]">
+        <div className="mt-14 grid gap-6">
+          <section aria-labelledby="founders-heading">
+            <h2 id="founders-heading" className="sr-only">
+              Founders
+            </h2>
+            <ul className="grid gap-6 md:grid-cols-2">
+              {contact.founders.map((f) => (
+                <li key={f.name}>
+                  <FounderCard founder={f} />
+                </li>
+              ))}
+            </ul>
+          </section>
           <section aria-labelledby="email-heading" className="flex flex-col rounded-[20px] bg-white p-7 shadow-card sm:p-9">
             <span className="grid size-12 place-items-center rounded-xl bg-blue-50 text-blue">
               <Mail className="size-5" aria-hidden="true" />
@@ -68,19 +75,6 @@ export default function ReachOut() {
               </button>
             </div>
           </section>
-
-          <section aria-labelledby="founders-heading">
-            <h2 id="founders-heading" className="sr-only">
-              Founders
-            </h2>
-            <ul className="grid h-full gap-6">
-              {contact.founders.map((f) => (
-                <li key={f.name}>
-                  <FounderCard founder={f} />
-                </li>
-              ))}
-            </ul>
-          </section>
         </div>
       </div>
     </div>
@@ -88,25 +82,34 @@ export default function ReachOut() {
 }
 
 function FounderCard({ founder }: { founder: Founder }) {
-  const initials = founder.name
-    .split(' ')
-    .map((p) => p[0])
-    .join('')
   return (
     <article className="flex h-full flex-col rounded-[20px] bg-white p-7 shadow-card" data-testid="founder-card">
       <div className="flex items-center gap-4">
-        <span
-          aria-hidden="true"
-          className="grid size-14 shrink-0 place-items-center rounded-full bg-[linear-gradient(135deg,var(--color-blue),var(--color-teal))] text-lg font-semibold text-white"
-        >
-          {initials}
-        </span>
+        <img
+          src={`${import.meta.env.BASE_URL}images/founders/${founder.image}`}
+          alt={founder.name}
+          width={96}
+          height={96}
+          className="size-20 shrink-0 rounded-2xl bg-surface object-cover object-top sm:size-24"
+        />
         <div>
           <h3 className="text-lg font-[640] tracking-[-0.015em]">{founder.name}</h3>
           <p className="text-sm text-ink-500">{founder.role}, InScene</p>
         </div>
       </div>
       <div className="mt-6 flex flex-wrap gap-2.5">
+        {founder.websiteUrl && (
+          <a
+            href={founder.websiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 items-center gap-2 rounded-[10px] px-3.5 text-sm font-medium text-navy shadow-card transition-colors hover:bg-surface"
+          >
+            <Globe className="size-4 text-blue" aria-hidden="true" />
+            rohansrt.cc
+            <ArrowUpRight className="size-3.5" aria-hidden="true" />
+          </a>
+        )}
         {founder.phone && (
           <a
             href={founder.phone.href}
@@ -115,6 +118,19 @@ function FounderCard({ founder }: { founder: Founder }) {
           >
             <Phone className="size-4 text-blue" aria-hidden="true" />
             {founder.phone.display}
+          </a>
+        )}
+        {founder.phone && (
+          <a
+            href={whatsappUrl(founder)}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Message ${founder.name} on WhatsApp`}
+            className="inline-flex h-10 items-center gap-2 rounded-[10px] bg-teal-50 px-3.5 text-sm font-medium text-teal-700 shadow-card transition-colors hover:bg-teal-100"
+          >
+            <MessageCircle className="size-4" aria-hidden="true" />
+            Message on WhatsApp
+            <ArrowUpRight className="size-3.5" aria-hidden="true" />
           </a>
         )}
         {founder.linkedinUrl ? (
