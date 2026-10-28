@@ -1,0 +1,10 @@
+{
+  "mode": "Built-in image_gen",
+  "basePrompt": "Use case: illustration-story. Create one polished editorial illustration for an InScene learning website card. Landscape 3:2 composition. Style: restrained flat vector-like illustration with gently dimensional paper layers, rounded geometry, fine navy outlines, matte surfaces, soft minimal shadows. Palette strictly cobalt #3268FF, pale periwinkle #EAF0FF, white, navy #13283C, with tiny muted teal accents. Background very pale blue-white. Generous breathing room, centered clear composition, readable at 260px wide. No people, characters, faces, hands, animals, text, lettering, numerals, logos or watermarks. Not photorealistic, no glossy 3D. Subject: ",
+  "subjects": [
+    "An open architectural doorway on a small rounded platform reveals an abstract everyday interior with a desk, window and simple plant. A blue floor path leads into the doorway, conveying entering a real-life scenario. Make this a thoughtful miniature environment, not an icon.",
+    "Three overlapping rounded dialogue panels floating above a small platform, connected to two simple choice tiles by elegant branching lines; one tile highlighted cobalt with a small geometric selection mark. Convey conversation and making a decision using only objects and abstract shapes.",
+    "A small sculptural branching pathway on a rounded platform, winding through three distinct geometric milestones. One continuous cobalt route advances to an open arch at the far end while a pale alternative curves aside. Convey choices becoming consequences, clear narrative composition.",
+    "An open debrief notebook on a small rounded platform with abstract blue lines and checkmarks, a simple pencil resting beside it, and three small ascending rounded blocks emerging behind the notebook. Convey reflection and steady learning, with no readable text."
+  ]
+}
