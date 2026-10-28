@@ -25,10 +25,6 @@ export function Hero() {
               <ArrowDown className="size-4" aria-hidden="true" />
             </ButtonAnchor>
           </div>
-          <p className="order-5 text-sm text-ink-500 lg:mt-8">
-            Built for <span className="font-medium text-navy">police training institutions</span> and{' '}
-            <span className="font-medium text-navy">schools, Grades 6–12</span>.
-          </p>
         </div>
 
         <div className="order-3 min-w-0 lg:order-none lg:col-start-2 lg:row-start-1">
