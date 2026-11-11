@@ -1,18 +1,11 @@
 import { useNavigate } from 'react-router-dom'
-import { ArrowRight, BookMarked, Clock, Compass, Gamepad2, RotateCcw, School, Sparkles } from 'lucide-react'
+import { ArrowRight, BookMarked, Clock, RotateCcw, School } from 'lucide-react'
 import { getSimulationThumbnail } from '../../assets'
 import { Button, ButtonLink } from '../../components/ui/Button'
 import { useDocumentTitle } from '../../hooks/useDocumentTitle'
 import { PassportStamps, ProfileSnapshot, SimulationPicker, StampCount } from '../components/Progress'
 import { coreDone, missionDone } from '../engine/results'
 import { useCareer } from '../store'
-
-const steps = [
-  { icon: Sparkles, title: 'Quick Start', time: '6 min', tag: 'Required', text: 'Swipe cards and play This or That. No wrong answers.' },
-  { icon: Compass, title: 'Your Career Profile', time: '3 min', tag: 'First stamp', text: 'Your interest shape, career worlds and four careers to explore, with reasons.' },
-  { icon: Gamepad2, title: 'Pick a simulation', time: '15 min each', tag: 'Earn stamps', text: 'Try real work, like stopping a flood with a scientist, a planner and an engineer.' },
-  { icon: BookMarked, title: 'Collect stamps', time: 'Any time', tag: 'Passport', text: 'Each simulation adds a stamp and makes your profile clearer.' },
-]
 
 export default function CareerHome() {
   const { state, reset } = useCareer()
@@ -123,25 +116,6 @@ export default function CareerHome() {
       </section>
 
       <section className="mx-auto w-full max-w-[1200px] space-y-8 px-4 pb-16 sm:px-6">
-        <div>
-          <h2 className="text-xl font-[650] tracking-[-0.02em]">How it works</h2>
-          <ol className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((s, i) => (
-              <li key={s.title} className="relative rounded-2xl bg-white p-5 shadow-card">
-                <div className="flex items-center justify-between">
-                  <span className="grid size-10 place-items-center rounded-xl bg-violet-50 text-violet">
-                    <s.icon className="size-5" aria-hidden="true" />
-                  </span>
-                  <span className="text-xs font-semibold text-ink-500">{s.time}</span>
-                </div>
-                <p className="mt-4 text-xs font-semibold text-violet-700">Step {i + 1} · {s.tag}</p>
-                <h3 className="mt-0.5 font-semibold">{s.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-500">{s.text}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-
         <div className="rounded-[24px] bg-white p-5 shadow-card sm:p-7" data-testid="home-passport">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>

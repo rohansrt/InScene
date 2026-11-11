@@ -61,6 +61,10 @@ Three zones (Market Road 70, School underpass 80, Lake View Lane 90 base risk). 
 ## Content
 
 - Careers, routes and next steps: `src/career/data/`. Routes are general Indian pathways and always come with "check the official site".
+- The catalogue has 52 careers across the 10 worlds. It covers India's large hiring paths (engineering, medicine and pharmacy, banking and CA,
+  government and defence, teaching, hospitality, logistics, skilled trades) and newer or global roles (AI, chip design, product, UX,
+  sustainability, digital marketing, video creation). A simulation of 5,000 random students puts every career in someone's top 3, and no
+  single career is the top suggestion more than about 8% of the time.
 - Fun facts (`data/facts.ts`) were checked before adding. Dropped: the NCO-2015 occupation count (unconfirmed). Mumbai's monsoon fact says "most", with no percentage.
 - Theme colours come from the validated dataviz palette, and always appear with a label and icon.
 
