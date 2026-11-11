@@ -286,5 +286,53 @@
       "height": 900
     },
     "scenes": {}
+  },
+  "rain-ready": {
+    "thumbnail": {
+      "alt": "A student and civil engineer review a neighbourhood drainage map beside a rain-wet street.",
+      "width": 1600,
+      "height": 900
+    },
+    "scenes": {}
+  },
+  "water-detectives": {
+    "thumbnail": {
+      "alt": "Students and an environmental scientist examine a water sample beside a green school pond.",
+      "width": 1600,
+      "height": 900
+    },
+    "scenes": {}
+  },
+  "design-the-play-space": {
+    "thumbnail": {
+      "alt": "Students and a designer arrange a miniature playground layout in a school courtyard.",
+      "width": 1600,
+      "height": 900
+    },
+    "scenes": {}
+  },
+  "power-cut-at-the-clinic": {
+    "thumbnail": {
+      "alt": "An electrician discusses a safely closed electrical cabinet with a doctor in a village clinic.",
+      "width": 1600,
+      "height": 900
+    },
+    "scenes": {}
+  },
+  "solar-school": {
+    "thumbnail": {
+      "alt": "Students and an energy engineer compare a rooftop plan beside school solar panels.",
+      "width": 1600,
+      "height": 900
+    },
+    "scenes": {}
+  },
+  "you-are-the-product-manager": {
+    "thumbnail": {
+      "alt": "College-age collaborators prioritise feature cards and review an app plan around a laptop.",
+      "width": 1600,
+      "height": 900
+    },
+    "scenes": {}
   }
 }

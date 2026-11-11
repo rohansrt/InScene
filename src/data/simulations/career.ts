@@ -87,7 +87,7 @@ export const careerSimulations: Simulation[] = [
       { id: 'advanced', availability: 'documented', description: 'Planner and Pro (Class 11–12 and college): runoff-coefficient maths and degree, entrance and internship routes.' },
     ],
     icon: 'rain',
-    imageKey: 'career.rain-ready',
+    imageKey: 'simulation.rain-ready',
     playPath: '/career/rain-ready',
     careerStep: 'optional',
     unlockNote: 'Unlocks after your Career Profile',
@@ -99,7 +99,7 @@ export const careerSimulations: Simulation[] = [
     situation: 'The pond near school has turned green and the fish are struggling. As an environmental scientist, inspect observations, choose which sample to test and recommend how to fix it.',
     howItPlays: ['Observe the pond and pick what to sample.', 'Compare simple test results.', 'Choose an intervention and explain it.'],
     learningOutcomes: ['See how environmental scientists ask questions and use evidence.'], ...planned,
-    icon: 'fish', imageKey: 'career.water-detectives', sourceReference: SOURCE,
+    icon: 'fish', imageKey: 'simulation.water-detectives', sourceReference: SOURCE,
   },
   {
     id: 'career-03', code: 'C3', slug: 'design-the-play-space', title: 'Design the Play Space', category: 'career', audience: 'Class 7–8',
@@ -107,7 +107,7 @@ export const careerSimulations: Simulation[] = [
     situation: 'The school has a small empty corner and ₹2 lakh. As a designer, choose equipment, arrange a layout and get feedback from students who want very different things.',
     howItPlays: ['Meet the users.', 'Pick and place equipment within budget.', 'Test the layout with fictional students.'],
     learningOutcomes: ['Experience design as creativity plus trade-offs.'], ...planned,
-    icon: 'sparkles', imageKey: 'career.design-the-play-space', sourceReference: SOURCE,
+    icon: 'sparkles', imageKey: 'simulation.design-the-play-space', sourceReference: SOURCE,
   },
   {
     id: 'career-04', code: 'C4', slug: 'power-cut-at-the-clinic', title: 'Power Cut at the Clinic', category: 'career', audience: 'Class 9–10',
@@ -115,7 +115,7 @@ export const careerSimulations: Simulation[] = [
     situation: 'A clinic’s lights and vaccine fridge keep tripping. As an electrician, follow safety rules, test circuits, find the fault and explain the fix to the doctor.',
     howItPlays: ['Run a safety check.', 'Test circuits and read clues.', 'Fix the fault and brief the clinic staff.'],
     learningOutcomes: ['See skilled trades as expert problem-solving work.'], ...planned,
-    icon: 'zap', imageKey: 'career.power-cut-at-the-clinic', sourceReference: SOURCE,
+    icon: 'zap', imageKey: 'simulation.power-cut-at-the-clinic', sourceReference: SOURCE,
   },
   {
     id: 'career-05', code: 'C5', slug: 'solar-school', title: 'Solar School', category: 'career', audience: 'Class 11–12',
@@ -123,7 +123,7 @@ export const careerSimulations: Simulation[] = [
     situation: 'Given an electricity bill history, a rooftop layout and cost options, compare solar designs, estimate output and payback, and recommend a plan with its limits.',
     howItPlays: ['Read the energy data.', 'Compare system sizes.', 'Write a recommendation with assumptions.'],
     learningOutcomes: ['Experience how energy work mixes engineering, numbers and communication.'], ...planned,
-    icon: 'sun', imageKey: 'career.solar-school', sourceReference: SOURCE,
+    icon: 'sun', imageKey: 'simulation.solar-school', sourceReference: SOURCE,
   },
   {
     id: 'career-06', code: 'C6', slug: 'you-are-the-product-manager', title: 'You’re the Product Manager', category: 'career', audience: 'Class 11–12 · college',
@@ -131,6 +131,6 @@ export const careerSimulations: Simulation[] = [
     situation: 'With customer feedback, usage numbers and a limited budget, define a success metric, prioritise features and present a plan, until a new piece of evidence challenges it.',
     howItPlays: ['Study users and numbers.', 'Prioritise features.', 'Revisit the plan when the data changes.'],
     learningOutcomes: ['See how product work balances evidence, people and limits.'], ...planned,
-    icon: 'smartphone', imageKey: 'career.you-are-the-product-manager', sourceReference: SOURCE,
+    icon: 'smartphone', imageKey: 'simulation.you-are-the-product-manager', sourceReference: SOURCE,
   },
 ]
