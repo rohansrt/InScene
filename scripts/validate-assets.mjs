@@ -34,7 +34,7 @@ for (const [name, metadata] of Object.entries(homepage)) {
   checkFile(`images/homepage/${name}.webp`)
   checkFile(`images/homepage/${name}-800.webp`)
 }
-for (const file of ['src/data/simulations/police.ts', 'src/data/simulations/school.ts']) {
+for (const file of ['src/data/simulations/police.ts', 'src/data/simulations/school.ts', 'src/data/simulations/career.ts']) {
   const content = readFileSync(resolve(root, file), 'utf8')
   for (const match of content.matchAll(/imageKey: 'simulation\.([^']+)'/g)) {
     assert(catalog[match[1]], `Unregistered simulation image: ${match[1]}`)

@@ -1,5 +1,5 @@
 import {
-  Beaker, BookOpen, CalendarClock, ChartColumn, ClipboardList, CloudRain, Database, Droplets, FileWarning, Fish,
+  Beaker, BookOpen, Compass, CalendarClock, ChartColumn, ClipboardList, CloudRain, Database, Droplets, FileWarning, Fish,
   FlaskConical, Footprints, GlassWater, House, Landmark, Megaphone, MessageSquareWarning, MessagesSquare, Microscope,
   Recycle, ScanFace, ShoppingCart, Smartphone, Sparkles, Store, Sun, Timer, TrafficCone, Trash2, TrendingUp, Trophy,
   Users, Video, Wallet, Wrench, Zap, type LucideIcon,
@@ -41,6 +41,7 @@ const icons: Record<string, LucideIcon> = {
   store: Store,
   scan: ScanFace,
   calendar: CalendarClock,
+  compass: Compass,
 }
 
 export function SimulationIcon({ name, className }: { name: string; className?: string }) {

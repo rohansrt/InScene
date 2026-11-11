@@ -1,14 +1,16 @@
+import { careerSimulations } from './career'
 import { policeSimulations } from './police'
 import { schoolSimulations } from './school'
 import type { Category, GradeBand, LevelId, Strand, Simulation } from './types'
 
 export type { Category, GradeBand, LevelId, Strand, Simulation } from './types'
 
-export const simulations: Simulation[] = [...policeSimulations, ...schoolSimulations]
+export const simulations: Simulation[] = [...policeSimulations, ...schoolSimulations, ...careerSimulations]
 
 export const categoryLabels: Record<Category, string> = {
   police: 'Police Training',
   school: 'School Training',
+  career: 'Career Simulator',
 }
 
 export const gradeBands: GradeBand[] = ['6-8', '9-10', '11-12']

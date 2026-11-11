@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState, type RefObject } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, GraduationCap, Play, ShieldHalf } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Compass, GraduationCap, Play, ShieldHalf } from 'lucide-react'
 import { brand } from '../../config/brand'
 import { categoryLabels, simulations, type Category } from '../../data/simulations'
 import { cn } from '../../lib/cn'
@@ -18,6 +18,11 @@ const options: Array<{ value: Category; icon: typeof GraduationCap; blurb: strin
     value: 'school',
     icon: GraduationCap,
     blurb: 'Academic and non-academic scenarios for Grades 6–8, 9–10 and 11–12.',
+  },
+  {
+    value: 'career',
+    icon: Compass,
+    blurb: 'Start with a 10-minute Career Profile, then try real work in optional simulations. Playable now.',
   },
 ]
 
@@ -43,7 +48,7 @@ export function DemoDialog({ onClose, returnFocusRef }: { onClose: () => void; r
       labelledBy={view === 'intro' ? titleId : soonId}
       describedBy={view === 'intro' ? `${uid}-desc` : undefined}
       returnFocusRef={returnFocusRef}
-      className="sm:max-w-[600px]"
+      className="sm:max-w-[720px]"
       closeLabel="Close demo dialog"
     >
       {view === 'coming-soon' ? (
@@ -76,7 +81,7 @@ export function DemoDialog({ onClose, returnFocusRef }: { onClose: () => void; r
 
           <fieldset className="mt-6">
             <legend className="text-sm font-semibold text-navy">Choose a training track</legend>
-            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <div className="mt-3 grid gap-3 sm:grid-cols-3">
               {options.map(({ value, icon: Icon, blurb }) => {
                 const selected = value === category
                 return (
@@ -112,10 +117,10 @@ export function DemoDialog({ onClose, returnFocusRef }: { onClose: () => void; r
 
           <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
             <Button variant="ghost" onClick={() => navigate(`/products?category=${category}`)} className="-ml-2 justify-start">
-              Browse {count} {category === 'police' ? 'police' : 'school'} simulations
+              Browse {count} {category === 'police' ? 'police' : category === 'career' ? 'career' : 'school'} simulations
               <ArrowRight className="size-4" aria-hidden="true" />
             </Button>
-            <Button ref={playRef} size="lg" onClick={() => setView('coming-soon')} data-testid="play-demo">
+            <Button ref={playRef} size="lg" onClick={() => (category === 'career' ? navigate('/career') : setView('coming-soon'))} data-testid="play-demo">
               <Play className="size-4 fill-current" aria-hidden="true" />
               Play Demo
             </Button>

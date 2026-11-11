@@ -1,4 +1,4 @@
-export type Category = 'police' | 'school'
+export type Category = 'police' | 'school' | 'career'
 export type GradeBand = '6-8' | '9-10' | '11-12'
 export type Strand = 'academic' | 'non-academic'
 export type LevelId = 'basic' | 'advanced'
@@ -64,6 +64,14 @@ export interface Simulation {
   /** Police: sample character prompts. */
   quotes?: string[]
   levels: SimulationLevel[]
+  /** Career only: who it is for, e.g. "Ages 12–20". */
+  audience?: string
+  /** In-app route that starts a playable simulation. */
+  playPath?: string
+  /** Career only: the core profile is required and comes first; simulations are optional. */
+  careerStep?: 'required' | 'optional'
+  /** Career only: shown when something must be done first, e.g. "Unlocks after your Career Profile". */
+  unlockNote?: string
   /** Lucide icon used in the placeholder artwork until illustrations exist. */
   icon: string
   imageKey: string

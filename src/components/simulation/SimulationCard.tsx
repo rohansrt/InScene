@@ -1,4 +1,4 @@
-import { ArrowRight, Clock } from 'lucide-react'
+import { ArrowRight, Clock, Star } from 'lucide-react'
 import type { Simulation } from '../../data/simulations'
 import { ScenarioImage } from './ScenarioImage'
 import { durationLabel, imageAlt } from './meta'
@@ -30,9 +30,10 @@ export function SimulationCard({ simulation: sim, testId = 'simulation-card' }: 
         zoomOnHover
         sizes="(min-width: 1024px) 220px, (min-width: 768px) 33vw, 50vw"
       />
+      {sim.careerStep === 'required' && <CareerStepBadge />}
 
       <div className="flex flex-1 flex-col p-3.5">
-        <p className={isPolice ? 'truncate text-[0.6875rem] font-medium text-blue-700' : 'truncate text-[0.6875rem] font-medium text-teal-700'}>
+        <p className={isPolice ? 'truncate text-[0.6875rem] font-medium text-blue-700' : sim.category === 'career' ? 'truncate text-[0.6875rem] font-medium text-violet-700' : 'truncate text-[0.6875rem] font-medium text-teal-700'}>
           {sim.area}
         </p>
         <h3 className="mt-1 line-clamp-2 text-[0.875rem] font-[620] leading-snug tracking-[-0.01em]">
@@ -62,5 +63,14 @@ export function SimulationCard({ simulation: sim, testId = 'simulation-card' }: 
         </div>
       </div>
     </article>
+  )
+}
+
+/** Career catalog: the core profile is required and comes first, so only it carries a badge. */
+function CareerStepBadge() {
+  return (
+    <span data-testid="career-step" data-step="required" className="absolute left-2.5 top-2.5 z-10 inline-flex items-center gap-1 rounded-full bg-amber px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.06em] text-navy shadow-xs">
+      <Star className="size-3 fill-current" aria-hidden="true" />Required · Start here
+    </span>
   )
 }

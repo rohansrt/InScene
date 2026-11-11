@@ -2,7 +2,7 @@ import { imageRegistry } from '../../assets'
 import { cn } from '../../lib/cn'
 import { SimulationIcon } from './SimulationIcon'
 
-export type ImageTone = 'police' | 'school' | 'brand'
+export type ImageTone = 'police' | 'school' | 'career' | 'brand'
 
 interface Props {
   imageKey: string
@@ -23,6 +23,7 @@ interface Props {
 const toneStyles: Record<ImageTone, { from: string; to: string; orb: string }> = {
   police: { from: '#0d1f35', to: '#1e4fd0', orb: '#5b8cff' },
   school: { from: '#0b2f3a', to: '#0d8f86', orb: '#4fe0cf' },
+  career: { from: '#1b2a6b', to: '#5a49c9', orb: '#9d8cff' },
   brand: { from: '#10243a', to: '#1f5fd6', orb: '#3fd2c0' },
 }
 

@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState, type ReactNode, type RefObject } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ArrowLeft, CircleCheck, Clock, Gauge, Info, Play, Quote, ShieldCheck } from 'lucide-react'
 import { categoryLabels, levelLabels, type LevelId, type Simulation } from '../../data/simulations'
 import { Button } from '../ui/Button'
@@ -30,8 +31,14 @@ function SimulationDialog({ sim, onClose, returnFocusRef }: { sim: Simulation; o
   const titleId = `${uid}-title`
   const soonId = `${uid}-soon`
   const isPolice = sim.category === 'police'
+  const isCareer = sim.category === 'career'
+  const navigate = useNavigate()
 
   function playNow() {
+    if (sim.playPath) {
+      navigate(sim.playPath)
+      return
+    }
     savedScroll.current = playRef.current?.closest('[role="dialog"]')?.querySelector('[data-dialog-scroll]')?.scrollTop ?? 0
     setView('coming-soon')
   }
@@ -104,7 +111,9 @@ function SimulationDialog({ sim, onClose, returnFocusRef }: { sim: Simulation; o
               </h2>
               {sim.subtitle && <p className="mt-2 text-lg text-ink-500">{sim.subtitle}</p>}
               <ul className="mt-5 flex flex-wrap gap-2" aria-label="Simulation details">
-                <li><Badge tone={isPolice ? 'blue' : 'teal'}>{isPolice ? `Track: ${sim.area}` : sim.area}</Badge></li>
+                {sim.careerStep === 'required' && <li><Badge className="bg-amber-50 font-semibold text-amber-700 ring-amber/30">Required · Start here</Badge></li>}
+                {sim.unlockNote && <li><Badge tone="violet">{sim.unlockNote}</Badge></li>}
+                <li><Badge tone={isPolice ? 'blue' : isCareer ? 'violet' : 'teal'}>{isPolice ? `Track: ${sim.area}` : sim.area}</Badge></li>
                 {sim.duration && (
                   <li>
                     <Badge>
@@ -230,6 +239,11 @@ function SimulationDialog({ sim, onClose, returnFocusRef }: { sim: Simulation; o
                   <span className="font-semibold text-navy">Proposed design. </span>
                   This scenario is to be reviewed with experienced police trainers and jurisdiction-specific SOPs before it is
                   used as operational instruction. It does not represent an approved police SOP or legal interpretation.
+                </p>
+              ) : isCareer ? (
+                <p>
+                  <span className="font-semibold text-navy">How suggestions work. </span>
+                  {sim.guardrails ?? 'Suggestions are explorations, not predictions.'} Career and route information is to be reviewed by career counsellors before classroom use.
                 </p>
               ) : (
                 <p>

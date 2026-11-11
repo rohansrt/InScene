@@ -278,5 +278,13 @@
       "height": 900
     },
     "scenes": {}
+  },
+  "career-discovery": {
+    "thumbnail": {
+      "alt": "Two students look up from a laptop, imagining careers as a doctor, a wind-energy engineer and an artist.",
+      "width": 1600,
+      "height": 900
+    },
+    "scenes": {}
   }
 }

@@ -22,9 +22,10 @@ export function Chip({
   )
 }
 
-export function Badge({ className, tone = 'neutral', children }: { className?: string; tone?: 'neutral' | 'blue' | 'teal' | 'navy'; children: React.ReactNode }) {
+export function Badge({ className, tone = 'neutral', children }: { className?: string; tone?: 'neutral' | 'blue' | 'teal' | 'navy' | 'violet'; children: React.ReactNode }) {
   const tones = {
     neutral: 'bg-surface text-ink-600 ring-line',
+    violet: 'bg-violet-50 text-violet-700 ring-violet/20',
     blue: 'bg-blue-50 text-blue-700 ring-blue/15',
     teal: 'bg-teal-50 text-teal-700 ring-teal/20',
     navy: 'bg-white/90 text-navy ring-navy/10 backdrop-blur',

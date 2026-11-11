@@ -14,6 +14,16 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      // An effect whose arrow has an expression body returns that value, and React calls it as
+      // cleanup on unmount. DOM methods like scrollIntoView now return Promises in Chrome, which
+      // crashes with "destroy is not a function". Use a block body (returning a cleanup arrow is fine).
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: "CallExpression[callee.name=/^use(Layout|Insertion)?Effect$/] > ArrowFunctionExpression.arguments:first-child[body.type!='BlockStatement'][body.type!='ArrowFunctionExpression']",
+          message: 'Use a block body for effect callbacks ({ ... }). A returned value is treated as a cleanup function.',
+        },
+      ],
     },
   },
 )

@@ -11,6 +11,7 @@ export function durationLabel(sim: Simulation) {
 
 /** Short contextual line: police → track; school → grade band · strand. */
 export function contextLine(sim: Simulation) {
+  if (sim.category === 'career') return sim.audience ?? categoryLabels.career
   return sim.category === 'police'
     ? `${categoryLabels.police} · ${sim.area}`
     : [gradeLabel(sim), sim.strand && strandLabels[sim.strand]].filter(Boolean).join(' · ')
